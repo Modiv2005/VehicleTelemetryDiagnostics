@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="com.telemetry.ui.controllers.MainController"
+            stylesheets="@../style.css"
+            styleClass="root">
+
+    <!-- Light Sidebar Navigation -->
+    <left>
+        <VBox spacing="10" prefWidth="260" styleClass="sidebar">
+            <children>
+                <VBox spacing="5" fx:id="identityPanel">
+                    <children>
+                        <Label fx:id="brandLabel" text="ELECTRA" style="-fx-text-fill: #2563eb; -fx-font-weight: 800; -fx-font-size: 24px; -fx-letter-spacing: 2px;"/>
+                        <Label text="TELEMETRY CORE" styleClass="label-muted" style="-fx-font-weight: bold;"/>
+                    </children>
+                    <padding><Insets bottom="40"/></padding>
+                </VBox>
+
+                <VBox spacing="8" VBox.vgrow="ALWAYS">
+                    <children>
+                        <Button text="Vehicle Models" fx:id="navModels" onAction="#handleNav" styleClass="nav-item, nav-item-active" maxWidth="Infinity" alignment="BASELINE_LEFT"/>
+                        <Button text="Live Dashboard" fx:id="navDashboard" onAction="#handleNav" styleClass="nav-item" maxWidth="Infinity" alignment="BASELINE_LEFT"/>
+                        <Button text="Analytics" fx:id="navPerformance" onAction="#handleNav" styleClass="nav-item" maxWidth="Infinity" alignment="BASELINE_LEFT"/>
+                        <Button text="Diagnostics" fx:id="navDiagnostics" onAction="#handleNav" styleClass="nav-item" maxWidth="Infinity" alignment="BASELINE_LEFT"/>
+                        <Button text="Alert Logs" fx:id="navAlerts" onAction="#handleNav" styleClass="nav-item" maxWidth="Infinity" alignment="BASELINE_LEFT"/>
+                    </children>
+                </VBox>
+                
+                <Region VBox.vgrow="ALWAYS" />
+                
+                <VBox spacing="10" styleClass="glass-card" style="-fx-padding: 15px;">
+                    <children>
+                        <Label text="Support Active" style="-fx-font-weight: bold; -fx-font-size: 13px;"/>
+                        <Label text="24/7 AI Diagnostic monitoring active." styleClass="label-muted" wrapText="true"/>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </left>
+
+    <!-- Main Content Area -->
+    <center>
+        <StackPane fx:id="contentArea">
+            <padding><Insets top="0" right="0" bottom="0" left="0"/></padding>
+        </StackPane>
+    </center>
+
+</BorderPane>

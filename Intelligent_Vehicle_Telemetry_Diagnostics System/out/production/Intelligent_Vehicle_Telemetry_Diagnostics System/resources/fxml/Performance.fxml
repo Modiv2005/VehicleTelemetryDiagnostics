@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="40" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="com.telemetry.ui.controllers.PerformanceController"
+      stylesheets="@../style.css"
+      styleClass="root">
+
+    <children>
+        <VBox spacing="5">
+            <Label text="PERFORMANCE ANALYTICS" styleClass="title-text" />
+            <Label text="Historical data analysis and efficiency tracking" styleClass="subtitle-text" />
+        </VBox>
+        
+        <TilePane hgap="30" vgap="30" prefColumns="2">
+            <children>
+                <VBox prefWidth="350" prefHeight="180" styleClass="glass-card" spacing="15">
+                    <padding><Insets top="25" right="25" bottom="25" left="25"/></padding>
+                    <children>
+                        <Label text="AVERAGE SPEED" styleClass="label-muted" style="-fx-font-weight: bold; -fx-font-size: 11px; -fx-letter-spacing: 1px;" />
+                        <Label fx:id="avgSpeedLabel" text="0.0" styleClass="value-bold" style="-fx-font-size: 32px;" />
+                        <Label text="km/h" styleClass="label-muted" style="-fx-font-weight: bold;" />
+                    </children>
+                </VBox>
+                
+                <VBox prefWidth="350" prefHeight="180" styleClass="glass-card" spacing="15">
+                    <padding><Insets top="25" right="25" bottom="25" left="25"/></padding>
+                    <children>
+                        <Label text="FUEL CONSUMPTION" styleClass="label-muted" style="-fx-font-weight: bold; -fx-font-size: 11px; -fx-letter-spacing: 1px;" />
+                        <Label fx:id="fuelConsLabel" text="8.2" styleClass="value-bold" style="-fx-font-size: 32px;" />
+                        <Label text="L/100km" styleClass="label-muted" style="-fx-font-weight: bold;" />
+                    </children>
+                </VBox>
+                
+                <VBox prefWidth="350" prefHeight="180" styleClass="glass-card" spacing="15">
+                    <padding><Insets top="25" right="25" bottom="25" left="25"/></padding>
+                    <children>
+                        <Label text="TOTAL DISTANCE" styleClass="label-muted" style="-fx-font-weight: bold; -fx-font-size: 11px; -fx-letter-spacing: 1px;" />
+                        <Label fx:id="distanceLabel" text="124.5" styleClass="value-bold" style="-fx-font-size: 32px;" />
+                        <Label text="kilometers" styleClass="label-muted" style="-fx-font-weight: bold;" />
+                    </children>
+                </VBox>
+                
+                <VBox prefWidth="350" prefHeight="180" styleClass="glass-card" spacing="15">
+                    <padding><Insets top="25" right="25" bottom="25" left="25"/></padding>
+                    <children>
+                        <Label text="PEAK ENGINE LOAD" styleClass="label-muted" style="-fx-font-weight: bold; -fx-font-size: 11px; -fx-letter-spacing: 1px;" />
+                        <Label fx:id="peakRpmLabel" text="0" styleClass="value-bold" style="-fx-font-size: 32px;" />
+                        <Label text="RPM" styleClass="label-muted" style="-fx-font-weight: bold;" />
+                    </children>
+                </VBox>
+            </children>
+        </TilePane>
+    </children>
+    
+    <padding><Insets top="40" right="40" bottom="40" left="40"/></padding>
+
+</VBox>

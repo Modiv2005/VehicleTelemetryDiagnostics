@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="40" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="com.telemetry.ui.controllers.DiagnosticsController"
+      stylesheets="@../style.css"
+      styleClass="root">
+
+    <children>
+        <VBox spacing="5">
+            <Label text="SYSTEM DIAGNOSTICS &amp; HEALTH" styleClass="title-text" />
+            <Label text="Component-level health monitoring and predictive analysis" styleClass="subtitle-text" />
+        </VBox>
+        
+        <VBox spacing="25" styleClass="glass-card">
+            <padding><Insets top="30" right="40" bottom="30" left="40"/></padding>
+            <children>
+                <HBox spacing="40" alignment="CENTER_LEFT">
+                    <VBox spacing="8" HBox.hgrow="ALWAYS">
+                        <Label text="ENGINE SYSTEM" style="-fx-text-fill: #1e293b; -fx-font-weight: 800; -fx-font-size: 13px; -fx-letter-spacing: 0.5px;"/>
+                        <Label text="Thermal monitoring and structural integrity" styleClass="label-muted" />
+                        <ProgressBar fx:id="engineBar" maxWidth="Infinity" progress="1.0" prefHeight="10" styleClass="progress-normal"/>
+                    </VBox>
+                    <Label fx:id="engineLabel" text="100%" style="-fx-text-fill: #22c55e; -fx-font-weight: 900; -fx-font-size: 24px;"/>
+                </HBox>
+
+                <Separator style="-fx-opacity: 0.5;"/>
+
+                <HBox spacing="40" alignment="CENTER_LEFT">
+                    <VBox spacing="8" HBox.hgrow="ALWAYS">
+                        <Label text="BATTERY / ENERGY" style="-fx-text-fill: #1e293b; -fx-font-weight: 800; -fx-font-size: 13px; -fx-letter-spacing: 0.5px;"/>
+                        <Label text="Voltage stability and charge capacity" styleClass="label-muted" />
+                        <ProgressBar fx:id="batteryBar" maxWidth="Infinity" progress="1.0" prefHeight="10" styleClass="progress-normal"/>
+                    </VBox>
+                    <Label fx:id="batteryLabel" text="100%" style="-fx-text-fill: #22c55e; -fx-font-weight: 900; -fx-font-size: 24px;"/>
+                </HBox>
+
+                <Separator style="-fx-opacity: 0.5;"/>
+
+                <HBox spacing="40" alignment="CENTER_LEFT">
+                    <VBox spacing="8" HBox.hgrow="ALWAYS">
+                        <Label text="COOLING SYSTEM" style="-fx-text-fill: #1e293b; -fx-font-weight: 800; -fx-font-size: 13px; -fx-letter-spacing: 0.5px;"/>
+                        <Label text="Radiator efficiency and coolant flow" styleClass="label-muted" />
+                        <ProgressBar fx:id="coolingBar" maxWidth="Infinity" progress="1.0" prefHeight="10" styleClass="progress-normal"/>
+                    </VBox>
+                    <Label fx:id="coolingLabel" text="100%" style="-fx-text-fill: #22c55e; -fx-font-weight: 900; -fx-font-size: 24px;"/>
+                </HBox>
+            </children>
+        </VBox>
+
+        <VBox styleClass="glass-card" spacing="15">
+            <padding><Insets top="25" right="30" bottom="25" left="30"/></padding>
+            <children>
+                <Label text="INTELLIGENT RECOMMENDATIONS" styleClass="label-muted" style="-fx-font-weight: bold; -fx-font-size: 11px; -fx-letter-spacing: 1px;" />
+                <Label fx:id="recommendationLabel" text="All systems operating within optimal flight parameters. No maintenance required." style="-fx-text-fill: #22c55e; -fx-font-weight: 600; -fx-font-size: 15px;" wrapText="true" />
+            </children>
+        </VBox>
+    </children>
+    
+    <padding><Insets top="40" right="40" bottom="40" left="40"/></padding>
+
+</VBox>

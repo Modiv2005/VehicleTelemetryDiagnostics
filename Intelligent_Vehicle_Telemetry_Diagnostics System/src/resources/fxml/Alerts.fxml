@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="40" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="com.telemetry.ui.controllers.AlertsController"
+      stylesheets="@../style.css"
+      styleClass="root">
+
+    <children>
+        <!-- Title & Stats -->
+        <HBox alignment="CENTER_LEFT">
+            <VBox spacing="5" HBox.hgrow="ALWAYS">
+                <Label text="FULL SYSTEM EVENT LOG" styleClass="title-text" />
+                <Label text="Historical alerts and critical system logs for the active session" styleClass="subtitle-text" />
+            </VBox>
+            <HBox spacing="10">
+                <Button text="CLEAR ALL" fx:id="clearBtn" style="-fx-background-color: #ef4444; -fx-text-fill: white; -fx-background-radius: 8px; -fx-font-weight: bold;"/>
+                <Button text="EXPORT LOGS" fx:id="downloadBtn" styleClass="pill-filter" />
+            </HBox>
+        </HBox>
+        
+        <!-- Live History Grid -->
+        <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" style="-fx-background-color: transparent;">
+            <content>
+                <VBox fx:id="alertHistoryList" spacing="15" />
+            </content>
+        </ScrollPane>
+    </children>
+    
+    <padding><Insets top="40" right="40" bottom="40" left="40"/></padding>
+
+</VBox>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="30" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="com.telemetry.ui.controllers.DashboardController" 
+      stylesheets="@../style.css"
+      styleClass="root">
+
+    <children>
+        <!-- Top Title Row -->
+        <HBox alignment="CENTER_LEFT">
+            <padding><Insets top="40" right="40" bottom="0" left="40"/></padding>
+            <children>
+                <VBox spacing="5" HBox.hgrow="ALWAYS">
+                    <Label text="Vehicle Telemetry Stream" styleClass="title-text" />
+                    <Label text="Real-time performance metrics and subsystem diagnostics" styleClass="subtitle-text" />
+                </VBox>
+                <HBox spacing="10" alignment="CENTER_RIGHT">
+                    <Label text="● ACTIVE" style="-fx-text-fill: #22c55e; -fx-font-weight: bold; -fx-font-size: 11px; -fx-padding: 5px 12px; -fx-background-color: rgba(34, 197, 94, 0.1); -fx-background-radius: 8px;" />
+                    <Button text="Export Session" styleClass="pill-filter" />
+                </HBox>
+            </children>
+        </HBox>
+
+        <!-- Metrics Row -->
+        <HBox spacing="25" alignment="CENTER">
+            <padding><Insets right="40" left="40"/></padding>
+            <children>
+                <fx:include fx:id="speedCard" source="MetricCard.fxml"/>
+                <fx:include fx:id="rpmCard" source="MetricCard.fxml"/>
+                <fx:include fx:id="tempCard" source="MetricCard.fxml"/>
+                <fx:include fx:id="fuelCard" source="MetricCard.fxml"/>
+                <fx:include fx:id="voltCard" source="MetricCard.fxml"/>
+            </children>
+        </HBox>
+
+        <!-- Center Section: Chart + Alert Feed -->
+        <HBox spacing="25" VBox.vgrow="ALWAYS">
+            <padding><Insets right="40" bottom="40" left="40"/></padding>
+            <children>
+                <!-- Real-time Chart -->
+                <VBox styleClass="glass-card" HBox.hgrow="ALWAYS" spacing="15">
+                    <children>
+                        <HBox alignment="CENTER_LEFT">
+                            <children>
+                                <Label text="PERFORMANCE ANALYTICS" styleClass="label-muted" style="-fx-font-weight: bold; -fx-font-size: 11px; -fx-letter-spacing: 1px;" />
+                                <Region HBox.hgrow="ALWAYS" />
+                                <Label text="LIVE UPDATE" style="-fx-text-fill: #3b82f6; -fx-font-weight: bold; -fx-font-size: 10px;"/>
+                            </children>
+                        </HBox>
+                        <LineChart fx:id="telemetryChart" animated="false" createSymbols="false" VBox.vgrow="ALWAYS">
+                            <xAxis><NumberAxis side="BOTTOM" tickLabelsVisible="false" /></xAxis>
+                            <yAxis><NumberAxis side="LEFT" /></yAxis>
+                        </LineChart>
+                    </children>
+                </VBox>
+
+                <!-- Alert Feed Panel -->
+                <VBox prefWidth="340" styleClass="glass-card" spacing="15">
+                    <children>
+                        <Label text="INTELLIGENT ALERT FEED" styleClass="label-muted" style="-fx-font-weight: bold; -fx-font-size: 11px; -fx-letter-spacing: 1px;" />
+                        <ScrollPane fx:id="alertScrollPane" fitToWidth="true" VBox.vgrow="ALWAYS" style="-fx-background-color: transparent;">
+                            <content>
+                                <VBox fx:id="alertList" spacing="12" />
+                            </content>
+                        </ScrollPane>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+    </children>
+
+</VBox>

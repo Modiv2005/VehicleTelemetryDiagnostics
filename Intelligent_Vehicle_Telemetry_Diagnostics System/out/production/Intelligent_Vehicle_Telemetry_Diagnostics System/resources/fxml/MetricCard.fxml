@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="com.telemetry.ui.controllers.MetricCardController" 
+      prefWidth="220" prefHeight="140" styleClass="glass-card" spacing="10">
+
+    <children>
+        <Label fx:id="titleLabel" text="METRIC" styleClass="label-muted" style="-fx-font-weight: bold; -fx-font-size: 11px; -fx-letter-spacing: 1px;" />
+        
+        <HBox spacing="10" alignment="BASELINE_LEFT">
+            <children>
+                <Label fx:id="valueLabel" text="0.0" styleClass="value-bold" style="-fx-font-size: 26px;" />
+                <Label fx:id="unitLabel" text="UNIT" styleClass="label-muted" style="-fx-font-weight: bold; -fx-font-size: 13px;" />
+            </children>
+        </HBox>
+        
+        <Region VBox.vgrow="ALWAYS" />
+        
+        <VBox spacing="6">
+            <children>
+                <HBox alignment="CENTER_RIGHT">
+                    <children>
+                        <Label fx:id="statusLabel" text="OPTIMAL" style="-fx-text-fill: #10b981; -fx-font-size: 10px; -fx-font-weight: 800;" />
+                    </children>
+                </HBox>
+                <ProgressBar fx:id="progressBar" maxWidth="Infinity" progress="0.0" prefHeight="8" styleClass="progress-normal"/>
+            </children>
+        </VBox>
+    </children>
+    
+    <padding><Insets top="20" right="25" bottom="20" left="25"/></padding>
+
+</VBox>
